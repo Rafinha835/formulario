@@ -1,10 +1,10 @@
 <h1>Calculadora.php</h1>
 <form method="post"action="calculadora.php">
-    <label for="num1">Número 1:</label><br>
-    <input type="number" id="num1" name="num1" required><br>
+    <label for="numero1">Número 1:</label><br>
+    <input type="number" id="numero1" name="numero1" required><br>
 
-    <label for="num2">Número 2:</label><br>
-    <input type="number" id="num2" name="num2" required><br>
+    <label for="numero2">Número 2:</label><br>
+    <input type="number" id="numero2" name="numero2" required><br>
 
     <label for="operacao">Operação:</label><br>
     <select id="operacao" name="operacao" required>
@@ -16,59 +16,31 @@
 
     <input type="submit" value="Calcular">
 
-    <?php
-
-if (isset($_POST{"numero1"})){
-
-    echo "numero1 recebido vida POST:" .$_POST["numero1"];
-
-}
-?>
-
 <?php
-
-if (isset($_POST{"numero2"})){
-
-    echo "numero2 recebido vida POST:" .$_POST["numero2"];
-
-}
-?>
-
-<?php
-if (isset($_POST{"operaçoes"})){
-
-
-    echo "operaçoes recebida vida POST:" .$_POST["operaçoes"];
-
-}
-?>
-
-
-<?php
-if (isset($_POST["numero1"]) && isset($_POST["numero2"])  &&  isset($_POST["operaçoes"])){
+if (isset($_POST["numero1"]) && isset($_POST["numero2"])  &&  isset($_POST["operacao"])){
 
     $numero1=$_POST["numero1"];
     $numero2=$_POST["numero2"];
-    $operaçoes=$_POST["operaçoes"];
+    $operacao=$_POST["operacao"];
 
 
- if($operaçoes =="SOMA"){
+ if($operacao =="soma"){
        //codigo da soma 
        $resultado=$numero1+$numero2;
 
- }elseif($operaçoes =="SUBTRAÇÃO"){
+ }elseif($operacao =="subtracao"){
       //codigo da subtração
       $resultado=$numero1-$numero2;
 
 
-    }elseif($operaçoes =="MULTIPLICAÇÃO"){
+    }elseif($operacao =="multiplicacao"){
         //codigo da multiplicação
         $resultado=$numero1*$numero2;
 
       
-    }elseif($operaçoes =="DIVISÃO"){;
+    }elseif($operacao =="divisao"){;
         //codigo da divisão
-        $resultado=$numero1/$numero2;
+        $resultado=$numero1 / $numero2;
 
  }
 
